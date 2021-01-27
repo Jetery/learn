@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 /*
-//归方式实现打印一个整数的每一位数
+//递归方式实现打印一个整数的每一位数
 #include <stdio.h>
 void print(int x)
 {
@@ -199,7 +199,7 @@ int main()
 }
 */
 
-
+/*
 //2
 //递归
 #include <stdio.h>
@@ -219,5 +219,29 @@ int main()
 	int n = 0;
 	scanf("%d", &n);
 	printf("%d\n", fib(n));
+	return 0;
+}
+*/
+
+
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+//例如，调用DigitSum(1729)，则应该返回1+7+2+9，它的和是19
+#include <stdio.h>
+int DigitSum(int x)
+{
+	if (x > 9)
+	{
+		return (x % 10) + DigitSum(x / 10);
+	}
+	else
+		return x;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	int b = 0;
+	b = DigitSum(a);
+	printf("%d\n", b);
 	return 0;
 }
