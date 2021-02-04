@@ -19,7 +19,7 @@ sheet['D1'] ='推荐语'    # 加表头，给D1单元格赋值
 sheet['E1'] ='链接'     # 加表头，给E1单元格赋值
 '''
 headers={
-    'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    #自定
 }
 for x in range(10):
     url = 'https://movie.douban.com/top250?start=' + str(x*25) + '&filter='

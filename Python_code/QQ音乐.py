@@ -7,7 +7,7 @@ url = 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp'
 headers = {
     'referer':'https://y.qq.com/portal/search.html',
     # 请求来源
-    'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
+    #自行输入
     # 标记了请求从什么设备，什么浏览器上发出
     }
 
