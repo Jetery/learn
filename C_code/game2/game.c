@@ -26,20 +26,20 @@ int GetMine(char mine[ROWS][COLS], int x, int y)
 		mine[x - 1][y + 1] - 8 * '0';
 }
 
-//循环法，有待改进
+//循环法
 //int GetMine(char mine[ROWS][COLS], int x, int y)
 //{
 //	int i = 0;
 //	int j = 0;
-//	int sum = '\0';
+//	int sum = '0';
 //	for (i = x - 1; i <= x + 1; i++)
 //	{
-//		for (j = y - 1; j <= y + 1; y++)
+//		for (j = y - 1; j <= y + 1; j++)
 //		{
 //			sum += mine[i][j];
 //		}
 //	}
-//	return sum - 9 * '0';
+//	return sum - 10 * '0';
 //}
 
 
