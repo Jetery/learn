@@ -4,6 +4,7 @@ int main()
 {
 	int a = 3;
 	int b = 5;
+	printf("a=%d b=%d\n", a, b);
 	//
 	//交换两个整形的方法
 	//
