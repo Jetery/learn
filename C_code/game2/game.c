@@ -1,5 +1,4 @@
 #include "game.h"
-
 void InitBoard(char board[ROWS][COLS], int rows, int cols, char c)
 {
 	int i = 0;
@@ -26,21 +25,21 @@ int GetMine(char mine[ROWS][COLS], int x, int y)
 		mine[x - 1][y + 1] - 8 * '0';
 }
 
-//循环法
-//int GetMine(char mine[ROWS][COLS], int x, int y)
-//{
-//	int i = 0;
-//	int j = 0;
-//	int sum = '0';
-//	for (i = x - 1; i <= x + 1; i++)
-//	{
-//		for (j = y - 1; j <= y + 1; j++)
-//		{
-//			sum += mine[i][j];
-//		}
-//	}
-//	return sum - 10 * '0';
-//}
+循环法
+int GetMine(char mine[ROWS][COLS], int x, int y)
+{
+	int i = 0;
+	int j = 0;
+	int sum = '0';
+	for (i = x - 1; i <= x + 1; i++)
+	{
+		for (j = y - 1; j <= y + 1; j++)
+		{
+			sum += mine[i][j];
+		}
+	}
+	return sum - 10 * '0';
+}
 
 
 void FindCount(char mine[ROWS][COLS], 
@@ -55,7 +54,7 @@ void FindCount(char mine[ROWS][COLS],
 	{
 		printf("请输入坐标:>");
 		scanf("%d %d", &x, &y);
-		//确保合法
+		确保合法
 		if (x >= 1 && x <= row&&y >= 1 && y <= col)
 		{
 			if (mine[x][y] == '0')//不是雷则统计
@@ -90,7 +89,7 @@ void SetMine(char board[ROWS][COLS], int row, int col, int count)
 	{
 		int x = rand() % 9 + 1;
 		int y = rand() % 9 + 1;
-		//确保布置的雷不重复
+		确保布置的雷不重复
 		if (board[x][y] == '0')
 		{
 			board[x][y] = '1';
