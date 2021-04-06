@@ -18,7 +18,6 @@ public class Learn_20210406 {
         System.out.println(sum);
     }
 
-
     public static void main9(String[] args) {
         int i = 1;
         int num = 5;
