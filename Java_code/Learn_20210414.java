@@ -23,7 +23,6 @@ public class Learn_20210414 {
     }
 
     public static void main(String[] args) {
-        //Two-point lookup
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
         int ret = find(arr,2);
         if (ret == -1) {
