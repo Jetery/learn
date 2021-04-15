@@ -10,6 +10,10 @@ import java.util.Scanner;
 
 public class Learn_20210412 {
 
+    public int jumpFloorII(int target){
+        double ret = Math.pow(2,target-1);
+        return (int)ret;
+    }
 
     public int JumpFloorII(int target) {
         int sum = 1;
@@ -20,10 +24,6 @@ public class Learn_20210412 {
         return sum;
     }
 
-    public int jumpFloorII(int target){
-        double ret = Math.pow(2,target-1);
-        return (int)ret;
-    }
 
     public static int jumpFloor(int target) {
         return 1<<(target-1);
