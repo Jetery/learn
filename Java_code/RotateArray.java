@@ -1,12 +1,16 @@
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Created with IntelliJ IDEA
- * Description:
+ * Description: three ways to rotate array
  * User: Jetery
  * Date: 2021.04.17
  */
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+
 public class RotateArray {
 
     public static void reverse(int[] arr, int left, int right){
