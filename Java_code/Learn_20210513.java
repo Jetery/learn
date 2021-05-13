@@ -4,6 +4,7 @@
  * User: Jetery
  * Date: 2021.05.13
  */
+
 class Solution {
     public ListNode switchIndex(ListNode head,ListNode end){
         ListNode newHead = end;
