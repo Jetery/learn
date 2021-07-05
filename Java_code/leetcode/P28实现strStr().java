@@ -16,6 +16,8 @@ public int strStr(String haystack, String needle) {
 }
 
 
+
+
 public int strStr(String haystack, String needle) {
     // empty needle appears everywhere, first appears at 0 index
     if (needle.length() == 0)
