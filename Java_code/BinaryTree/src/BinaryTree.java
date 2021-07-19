@@ -63,4 +63,63 @@ public class BinaryTree {
         if(root == null) return 0;
         return getSize2(root.left) + getSize2(root.right) + 1;
     }
+
+    // 遍历思路-求叶子结点个数
+    static int leafSize = 0;
+    void getLeafSize1(TreeNode root) {
+        if (root == null) return;
+        if (root.right == null && root.left == null) {
+            leafSize++;
+        }
+        getLeafSize1(root.left);
+        getLeafSize1(root.right);
+    }
+
+    // 子问题思路-求叶子结点个数
+    int getLeafSize2(TreeNode root) {
+        if (root == null){
+            return 0;
+        }
+        if (root.right == null && root.left == null) {
+            return 1;
+        }
+        return getLeafSize2(root.left) + getLeafSize2(root.right);
+    }
+
+    //求第 k 层结点个数
+    int getKLevelSize(TreeNode root, int k) {
+        if (root == null || k < 1) {
+            return 0;
+        }
+        if (k == 1) {
+            return 1;
+        }
+        return getKLevelSize(root.left,k - 1) + getKLevelSize(root.right,k - 1);
+    }
+
+    // 获取二叉树的高度
+    int getHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+        return leftHeight > rightHeight ? leftHeight + 1 : rightHeight + 1;
+    }
+
+
+    TreeNode find(TreeNode root, char val) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == val) {
+            return root;
+        }
+        TreeNode ret = find(root.left,val);
+        if (ret != null) {
+            return ret;
+        }
+        ret = find(root.right,val);
+        return ret;
+    }
 }

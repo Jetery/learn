@@ -14,8 +14,19 @@ public class TestDemo {
         System.out.println();
         treeNode.postOrderTraversal(root);
         System.out.println();
+
         treeNode.getSize1(root);
         System.out.println(BinaryTree.num);
+
         System.out.println(treeNode.getSize2(root));
+
+        treeNode.getLeafSize1(root);
+
+        System.out.println(BinaryTree.leafSize);
+        System.out.println(treeNode.getLeafSize2(root));
+
+        System.out.println(treeNode.getKLevelSize(root,4));
+
+        System.out.println(treeNode.find(root, 'G'));
     }
 }
