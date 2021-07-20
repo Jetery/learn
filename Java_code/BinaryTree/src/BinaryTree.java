@@ -1,3 +1,7 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * Created with IntelliJ IDEA
  * Description:
@@ -33,12 +37,48 @@ public class BinaryTree {
         preOrderTraversal(root.right);
     }
 
+    //迭代版
+    void preOrderTraversalNor(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode cur = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (cur != null || !stack.empty()) {
+
+            while (cur != null) {
+                stack.push(cur);
+                System.out.print(cur.val + " ");
+                cur = cur.left;
+
+            }
+
+            cur = stack.pop().right;
+        }
+        System.out.println();
+    }
+
     // 中序遍历
     void inOrderTraversal(TreeNode root){
         if (root == null) return;
         inOrderTraversal(root.left);
         System.out.print(root.val + " ");
         inOrderTraversal(root.right);
+    }
+
+    //迭代版
+    void inOrderTraversalNor(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+        }
     }
 
     // 后序遍历
@@ -121,5 +161,52 @@ public class BinaryTree {
         }
         ret = find(root.right,val);
         return ret;
+    }
+
+
+    // 层序遍历
+    void levelOrderTraversal(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode top = queue.poll();
+            System.out.println(top.val + " ");
+            if (top.left != null) {
+                queue.offer(top.left);
+            }
+            if (top.right != null) {
+                queue.offer(top.right);
+            }
+        }
+        System.out.println();
+    }
+
+
+    // 判断一棵树是不是完全二叉树
+    boolean isCompleteTree(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode top = queue.poll();
+            if (top != null) {
+                queue.offer(top.left);
+                queue.offer(top.right);
+            } else {
+                int size = queue.size();
+                while (size != 0) {
+                    if (queue.poll() != null) {
+                        return false;
+                    }
+                    size--;
+                }
+            }
+        }
+        return true;
     }
 }

@@ -10,6 +10,9 @@ public class TestDemo {
         TreeNode root = treeNode.creatTree();
         treeNode.preOrderTraversal(root);
         System.out.println();
+        treeNode.preOrderTraversalNor(root);
+
+
         treeNode.inOrderTraversal(root);
         System.out.println();
         treeNode.postOrderTraversal(root);
