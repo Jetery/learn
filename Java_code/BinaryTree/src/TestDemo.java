@@ -12,11 +12,13 @@ public class TestDemo {
         System.out.println();
         treeNode.preOrderTraversalNor(root);
 
-
         treeNode.inOrderTraversal(root);
         System.out.println();
+        treeNode.inOrderTraversalNor(root);
+
         treeNode.postOrderTraversal(root);
         System.out.println();
+        treeNode.postOrderTraversalNor(root);
 
         treeNode.getSize1(root);
         System.out.println(BinaryTree.num);

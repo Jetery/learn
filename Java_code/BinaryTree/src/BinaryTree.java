@@ -37,6 +37,7 @@ public class BinaryTree {
         preOrderTraversal(root.right);
     }
 
+    //前序遍历
     //迭代版
     void preOrderTraversalNor(TreeNode root) {
         if (root == null) {
@@ -66,6 +67,7 @@ public class BinaryTree {
         inOrderTraversal(root.right);
     }
 
+    // 中序遍历
     //迭代版
     void inOrderTraversalNor(TreeNode root) {
         if (root == null) {
@@ -78,7 +80,11 @@ public class BinaryTree {
                 stack.push(cur);
                 cur = cur.left;
             }
+            cur = stack.pop();
+            System.out.print(cur.val + " ");
+            cur = cur.right;
         }
+        System.out.println();
     }
 
     // 后序遍历
@@ -87,6 +93,33 @@ public class BinaryTree {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.print(root.val + " ");
+    }
+
+    // 后序遍历
+    //迭代版
+    void postOrderTraversalNor(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        //pre 为前一个节点
+        TreeNode pre = null;
+        while (cur != null || !stack.empty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == pre) {
+                System.out.print(stack.pop().val + " ");
+                pre = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+        System.out.println();
     }
 
     // 遍历思路-求结点个数
@@ -148,6 +181,7 @@ public class BinaryTree {
     }
 
 
+    //查找节点
     TreeNode find(TreeNode root, char val) {
         if (root == null) {
             return null;
