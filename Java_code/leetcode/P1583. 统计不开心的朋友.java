@@ -1,4 +1,6 @@
+
 class Solution {
+
     Map<Integer, Map<Integer, Integer>> map = new HashMap<>();
     public int unhappyFriends(int n, int[][] preferences, int[][] pairs) {
         int m = pairs.length;
