@@ -26,9 +26,8 @@ public class InputListener implements ActionListener {
 	     * Hint: please notice the member method defined in class Sudoku 
 	     */
 
-	   //JTextField cell = new JTextField();
-	   //sudoku.findSelectedCell(cell);
-	   sudoku.findSelectedCell();
-    }
+	   JTextField cell = new JTextField();
+	   sudoku.findSelectedCell(cell);
+	}
 
 }
