@@ -48,5 +48,21 @@ class Solution {
 
 
 
-//事实上，我们可以统计任意只 arr[i]arr[i]arr[i] 在奇数子数组的出现次数。
-//尚未理解,有待增加
+//事实上，我们可以统计任意只 arr[i]在奇数子数组的出现次数。
+
+
+class Solution {
+    public int sumOddLengthSubarrays(int[] arr) {
+        int n = arr.length;
+        int ans = 0;
+        for (int i = 0; i < n; i++){  //统计每个数字左右奇数偶数个数
+            //奇数
+            int l1 = (i + 1) / 2, r1 = (n - i) / 2;
+            //偶数
+            int l2 = i / 2, r2 = (n - i - 1) / 2;
+            l2++;r2++;      //偶数还包含自己，所以都自加1
+            ans += arr[i] * (l1 * r1 + l2 * r2);
+        }
+        return ans;
+    }
+}
