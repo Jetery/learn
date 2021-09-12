@@ -32,6 +32,7 @@ class Solution {
 				continue;
 			ans += dp[str.length() - i - 1];
 			if (i != 0 && str.charAt(i - 1) == '1'){
+			// 因为== 0就跳过，那么当进行了此if判断时：前一位是1，必然已有连续1，后面数据全部非法，不用考虑了
 				return ans;
 			}
 		}
