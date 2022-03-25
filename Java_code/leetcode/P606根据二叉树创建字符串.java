@@ -33,3 +33,42 @@ class Solution {
         return sb.toString();
     }
 }
+
+
+
+class Solution {
+
+    StringBuilder stringBuilder;
+
+    public String tree2str(TreeNode root) {
+        if (root == null) return null;
+        stringBuilder = new StringBuilder();
+        preOrder(root);
+        return String.valueOf(stringBuilder);
+    }
+
+    private void preOrder(TreeNode root) {
+        if (root == null) return;
+        stringBuilder.append(root.val);
+        if (root.left == null && root.right == null) {
+            return;
+        } else if (root.left == null) {
+            stringBuilder.append("()");
+            stringBuilder.append("(");
+            preOrder(root.right);
+            stringBuilder.append(")");
+        } else if (root.right == null) {
+            stringBuilder.append("(");
+            preOrder(root.left);
+            stringBuilder.append(")");
+        } else {
+            stringBuilder.append("(");
+            preOrder(root.left);
+            stringBuilder.append(")");
+            stringBuilder.append("(");
+            preOrder(root.right);
+            stringBuilder.append(")");
+        }
+        return;
+    }
+}
