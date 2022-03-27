@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <button onclick="sendGet()">发送 Get 请求</button>
+    <button onclick="sendPost()">发送 Post 请求</button>
+    <button onclick="sendPut()">发送 Put 请求</button>
+    <button onclick="sendDelete()">发送 Delete 请求</button>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    function sendGet() {
+
+        $.ajax({
+            type: "get",
+            url: "method",
+            success: function(data, status) {
+                console.log(data);
+            }
+        });
+    }
+
+    function sendPost() {
+        $.ajax({
+            type: "post",
+            url: "method",
+            data: "request body",
+            success: function(data, status) {
+                console.log(data);
+            }
+        });
+
+    }
+
+    function sendPut() {
+        $.ajax({
+            type : "put",
+            url : "method",
+            data: "request body",
+            success: function(data, status) {
+                console.log(data);
+            }
+        });
+
+    }
+
+    function sendDelete() {
+
+        $.ajax({
+            type: "delete",
+            url: "method",
+            data: "request body",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>
