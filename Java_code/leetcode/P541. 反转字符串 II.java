@@ -29,6 +29,30 @@ class Solution {
     }
 }
 
+class Solution {
+    public String reverseStr(String s, int k) {
+        char[] chars = s.toCharArray();
+        int kk = k * 2;
+        int len = s.length();
+        int left = len % kk;
+        for (int i = 0; i < len - left; i += kk){
+            reverse(chars, i, i + k - 1);
+        }
+        // 最后的处理
+        reverse(chars, len - left, Math.min(len - left + k -1, len -1));
+        return String.valueOf(chars);
+    }
+
+    private void reverse(char[] chars, int l, int r) {
+        while (l < r){
+            char tem = chars[l];
+            chars[l] = chars[r];
+            chars[r] = tem;
+            l++;
+            r--;
+        }
+    }
+}
 
 //优化index的步长
 //优化跳出循环的判断
