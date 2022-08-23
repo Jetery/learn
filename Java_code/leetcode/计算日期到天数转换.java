@@ -40,3 +40,28 @@ public class Main{
         return 0;
     }
 }
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int year = sc.nextInt(), month = sc.nextInt(), day = sc.nextInt();
+        int[] days = new int[] {31, 28, 31, 30,
+                                31, 30, 31, 31,
+                                30, 31, 30, 31};
+        int ans = 0;
+        for (int i = 0; i < month - 1; i++) {
+            ans += days[i];
+        }
+        if (judge(year) && month > 2)
+            ans++;
+        ans += day;
+        System.out.println(ans);
+    }
+    
+    private static boolean judge(int n) {
+        if ((n % 4 == 0 && n % 100 != 0) || n % 400 == 0)
+            return true;
+        return false;
+    }
+}
