@@ -1,4 +1,6 @@
-package LearnThread;
+package LearnThread.basic;
+
+import LearnThread.basic.TestThread;
 
 /**
  * Created with IntelliJ IDEA

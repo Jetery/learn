@@ -1,4 +1,4 @@
-package LearnThread;
+package LearnThread.basic;
 
 /**
  * Created with IntelliJ IDEA
