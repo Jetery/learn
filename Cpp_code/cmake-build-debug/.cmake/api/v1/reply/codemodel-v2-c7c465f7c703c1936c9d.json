@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "acwing",
+					"jsonFile" : "directory-acwing-Debug-30695c967b385b58275c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "acwing",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "dependencies/fmt",
+					"jsonFile" : "directory-dependencies.fmt-Debug-8430856ebf761c9ff5c9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "dependencies/fmt",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "learn"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "leetcode",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "fmt::@9964d956d591922f2692",
+					"jsonFile" : "target-fmt-Debug-e7a9354607f0acffa196.json",
+					"name" : "fmt",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "test::@bda8dbf0f908495691a9",
+					"jsonFile" : "target-test-Debug-922975dd24e4109f8fe6.json",
+					"name" : "test",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/learn/Cpp_code/cmake-build-debug",
+		"source" : "E:/learn/Cpp_code"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
