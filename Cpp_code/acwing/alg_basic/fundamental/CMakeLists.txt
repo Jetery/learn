@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(leetcode)
+project(fundamental)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -15,6 +15,3 @@ foreach (file ${files})
     # fmt支持
     target_link_libraries(${exe} fmt-header-only)
 endforeach ()
-
-# 添加子目录
-add_subdirectory(alg_basic)

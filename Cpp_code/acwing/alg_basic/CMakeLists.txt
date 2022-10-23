@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
-project(leetcode)
+project(alg_basic)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 11)
 
 # 获取cpp文件相对于当前工作路径的相对路径，即文件名
 # 工作路径${CMAKE_CURRENT_SOURCE_DIR}就是CMakeList.txt所在的文件夹
@@ -17,4 +17,4 @@ foreach (file ${files})
 endforeach ()
 
 # 添加子目录
-add_subdirectory(alg_basic)
+add_subdirectory(fundamental)
