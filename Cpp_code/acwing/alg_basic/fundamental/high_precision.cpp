@@ -31,6 +31,22 @@ vector<int> add (vector<int> &a, vector<int> &b) {
     return ret;
 }
 
+vector<int> sub (vector<int> &a, vector<int> &b) {
+    vector<int> ret;
+    int t = 0;
+    for (int i = 0; i < a.size(); i++) {
+        t += a[i];
+        if (i < b.size()) t -= b[i];
+        ret.push_back((t + 10) % 10);
+        if (t < 0) t = -1;
+        else t = 0;
+    }
+    while (ret.size() > 1 && ret[ret.size() - 1] == 0) {
+        ret.pop_back();
+    }
+    return ret;
+}
+
 int main() {
     string a, b;
     vector<int> A, B;
@@ -40,6 +56,15 @@ int main() {
     // add
     auto c = add(A, B);
     for (int i = c.size() - 1; i >= 0; i--) printf("%d", c[i]);
+    cout << endl;
+    // sub
+    if (cmp(A, B)) c = sub(A, B);
+    else {
+        printf("-");
+        c = sub(B, A);
+    }
+    for (int i = c.size() - 1; i >= 0; i--) printf("%d", c[i]);
+    cout << endl;
 
     return 0;
 }
