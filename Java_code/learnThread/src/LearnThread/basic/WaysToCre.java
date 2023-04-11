@@ -1,5 +1,9 @@
 package LearnThread.basic;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
 /**
  * Created with IntelliJ IDEA
  * Description:
@@ -20,8 +24,16 @@ class MyRunnable implements Runnable{
     }
 }
 
+// 实现Callable接口
+class MyCallable implements Callable<String> {
+    @Override
+    public String call() throws Exception {
+        return "create by Callable";
+    }
+}
+
 public class WaysToCre {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,11 +51,17 @@ public class WaysToCre {
         Runnable myRunnable = new MyRunnable();
         Thread t4 = new Thread(myRunnable);
         // use Lambda
-        Thread t5 = new Thread(() -> System.out.println("5"));
+        Thread t5 = new Thread(() -> System.out.println("t5"));
+
+        MyCallable myCallable = new MyCallable();
+        FutureTask<String> task = new FutureTask<>(myCallable);
+        Thread t6 = new Thread(task);
         t1.start();
         t2.start();
         t3.start();
         t4.start();
         t5.start();
+        t6.start();
+        System.out.println("t6 :" + task.get());
     }
 }
