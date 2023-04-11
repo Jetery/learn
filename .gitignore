@@ -49,6 +49,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+**/.idea/
 
 # C++ gitignore
 # Prerequisites
